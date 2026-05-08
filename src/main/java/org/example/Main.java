@@ -1,4 +1,5 @@
 package org.example;
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,22 +7,24 @@ public class Main {
 
         Scanner teclado = new Scanner(System.in);
 
-        Conta conta = new Conta(100); // saldo inicial
+        Conta conta = new Conta("Anthony", 100);
         int opcao;
 
         do {
-            System.out.println("\n--- MENU ---");
+            System.out.println("\n=== MENU ===");
             System.out.println("1 - Ver saldo");
             System.out.println("2 - Depositar");
             System.out.println("3 - Sacar");
             System.out.println("4 - Ver histórico");
+            System.out.println("5 - Ver dados da conta");
             System.out.println("0 - Sair");
+            System.out.println("Escolha uma opção: ");
 
             try {
                 opcao = teclado.nextInt();
             } catch (Exception e) {
                 System.out.println("Digite apenas números!");
-                teclado.next(); // limpa erro
+                teclado.next();
                 opcao = -1;
             }
 
@@ -43,6 +46,10 @@ public class Main {
 
             else if (opcao == 4) {
                 conta.mostrarHistorico();
+            }
+
+            else if (opcao == 5) {
+                conta.mostrarDadosConta();
             }
 
         } while (opcao != 0);
