@@ -47,3 +47,9 @@ Cada conta possui:
 src/main/java/org/example/
 ├── Main.java
 └── Conta.java
+## ▶️ Como Executar
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/anthonyvicente557-svg/java-banking-system.git
