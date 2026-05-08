@@ -41,7 +41,7 @@ Cada conta possui:
 - Tratamento de Exceções
 - Versionamento com Git e GitHub
 
-## 📂 Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```text
 src/main/java/org/example/
@@ -49,7 +49,7 @@ src/main/java/org/example/
 └── Conta.java
 
 ## ▶️ Como Executar
-
+  
 1. Clone o repositório:
 
 ```bash
