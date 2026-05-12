@@ -8,7 +8,7 @@ public class Conta {
     private ArrayList<String> historico = new ArrayList<>();
     private int saldo;
 
-    public Conta(String titular, int saldoInicial){
+    public Conta(String titular, int saldoInicial) {
         this.titular = titular;
         this.saldo = saldoInicial;
     }
