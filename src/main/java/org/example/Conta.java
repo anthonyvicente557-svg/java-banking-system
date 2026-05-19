@@ -13,6 +13,18 @@ public class Conta {
         this.saldo = saldoInicial;
     }
 
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
     public void mostrarDadosConta() {
         System.out.println("Titular: " + titular);
         System.out.println("Saldo atual: " + saldo);

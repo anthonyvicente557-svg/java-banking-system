@@ -20,6 +20,7 @@ public class Main {
             System.out.println("3 - Sacar");
             System.out.println("4 - Ver histórico");
             System.out.println("5 - Ver dados da conta");
+            System.out.println("6 - Alterar titular");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -54,6 +55,15 @@ public class Main {
 
             else if (opcao == 5) {
                 conta.mostrarDadosConta();
+            }
+
+            else if (opcao == 6) {
+                teclado.nextLine();
+                System.out.println("Digite o novo titular: ");
+                String novoTitular = teclado.nextLine();
+
+                conta.setTitular(novoTitular);
+                System.out.println("Titular alterado com sucesso!");
             }
 
             else if (opcao == 0) {
