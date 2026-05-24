@@ -62,8 +62,11 @@ public class Main {
                 System.out.println("Digite o novo titular: ");
                 String novoTitular = teclado.nextLine();
 
-                conta.setTitular(novoTitular);
-                System.out.println("Titular alterado com sucesso!");
+                if (conta.setTitular(novoTitular)) {
+                    System.out.println("Titular alterado com sucesso!");
+                } else {
+                    System.out.println("Nome inválido.");
+                }
             }
 
             else if (opcao == 0) {

@@ -21,9 +21,16 @@ public class Conta {
         return titular;
     }
 
-    public void setTitular(String titular) {
+    public boolean setTitular(String titular) {
+        titular = titular.trim();
+
+        if (titular.isEmpty()) {
+            return false;
+        }
+
         this.titular = titular;
-    }
+            return false;
+        }
 
     public void mostrarDadosConta() {
         System.out.println("Titular: " + titular);
