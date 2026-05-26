@@ -12,6 +12,8 @@ Sistema bancário simples desenvolvido em Java com foco em Programação Orienta
 - ✅ Alterar titular da conta
 - ✅ Getters e Setters
 - ✅ Validação de valores
+- ✅ Suporte a valores decimais
+- ✅ Validação de até 2 casas decimais
 - ✅ Tratamento de erros com try/catch
 - ✅ Menu interativo no console
 
@@ -32,6 +34,8 @@ O titular pode ser alterado durante a execução do programa.
 - Git
 - GitHub
 - ArrayList
+- double
+- Regex
 - Programação Orientada a Objetos (POO)
 
 ## 📚 Conceitos Aplicados
@@ -44,6 +48,9 @@ O titular pode ser alterado durante a execução do programa.
 - this
 - ArrayList
 - Tratamento de Exceções
+- Validação de entrada
+- Validação com Regex
+- Números decimais com double
 - Programação Orientada a Objetos (POO)
 - Versionamento com Git e GitHub
 
@@ -79,6 +86,16 @@ git clone https://github.com/anthonyvicente557-svg/java-banking-system.git
 6 - Alterar titular
 0 - Sair
 ```
+
+## 💵 Exemplo de Valores Aceitos
+
+```text
+10
+10,5
+10,50
+```
+
+Valores com mais de duas casas decimais não são aceitos.
 
 ## 🎯 Objetivo do Projeto
 
