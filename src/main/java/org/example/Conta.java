@@ -6,14 +6,14 @@ public class Conta {
 
     private String titular;
     private ArrayList<String> historico = new ArrayList<>();
-    private int saldo;
+    private double saldo;
 
-    public Conta(String titular, int saldoInicial) {
+    public Conta(String titular, double saldoInicial) {
         this.titular = titular;
         this.saldo = saldoInicial;
     }
 
-    public int getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
@@ -38,26 +38,26 @@ public class Conta {
     }
 
     public void mostrarSaldo() {
-        System.out.println("Saldo atual: " + saldo);
-    }
+        System.out.println("Saldo atual: %.2f\n " + saldo);
+        }
 
-    public void depositar(int valor) {
+    public void depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
             historico.add("Depósito de " + valor);
-            System.out.println("Depósito de " + valor + " realizado.");
+            System.out.println("Depósito de %.2f realizado. \n" + valor);
         } else {
             System.out.println("Valor inválido.");
         }
     }
 
-    public void sacar(int valor) {
+    public void sacar(double valor) {
         if (valor <= 0) {
             System.out.println("Valor inválido.");
         } else if (saldo >= valor) {
             saldo -= valor;
             historico.add("Saque de " + valor);
-            System.out.println("Saque de " + valor + " realizado.");
+            System.out.println("Saque de %.2f realizado. \n" + valor);
         } else {
             System.out.println("Saldo insuficiente.");
         }

@@ -11,7 +11,7 @@ public class Main {
         // Cria a conta com titular e saldo inicial
         Conta conta = new Conta("Anthony", 100);
 
-        int opcao;
+        double opcao;
 
         do {
             System.out.println("\n=== MENU ===");
@@ -26,7 +26,7 @@ public class Main {
 
             // Lê a opção do menu com proteção contra letras
             try {
-                opcao = teclado.nextInt();
+                opcao = teclado.nextDouble();
             } catch (Exception e) {
                 System.out.println("Digite apenas números!");
                 teclado.next(); // limpa o valor inválido
@@ -39,13 +39,13 @@ public class Main {
 
             else if (opcao == 2) {
                 System.out.print("Digite o valor do depósito: ");
-                int valor = lerValor(teclado);
+                double valor = lerValor(teclado);
                 conta.depositar(valor);
             }
 
             else if (opcao == 3) {
                 System.out.print("Digite o valor do saque: ");
-                int valor = lerValor(teclado);
+                double valor = lerValor(teclado);
                 conta.sacar(valor);
             }
 
@@ -82,13 +82,14 @@ public class Main {
         teclado.close();
     }
 
-    public static int lerValor(Scanner teclado) {
-        try {
-            return teclado.nextInt();
-        } catch (Exception e) {
-            System.out.println("Digite apenas números!");
-            teclado.next(); // limpa o valor inválido
+    public static double lerValor(Scanner teclado) {
+        String entrada = teclado.next();
+
+        if (!entrada.matches("\\d+(,\\d{1,2})?")) {
+            System.out.println("Digite um valor válido com no máximo 2 casas decimas. ");
             return -1;
         }
+        entrada = entrada.replace(",", ".");
+        return Double.parseDouble(entrada);
     }
 }
