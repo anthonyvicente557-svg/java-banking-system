@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Conta {
 
     private String titular;
-    private ArrayList<String> historico = new ArrayList<>();
+    private ArrayList<Transacao> historico = new ArrayList<>();
     private double saldo;
 
     public Conta(String titular, double saldoInicial) {
@@ -29,7 +29,7 @@ public class Conta {
         }
 
         this.titular = titular;
-            return false;
+            return true;
         }
 
     public void mostrarDadosConta() {
@@ -38,14 +38,17 @@ public class Conta {
     }
 
     public void mostrarSaldo() {
-        System.out.println("Saldo atual: %.2f\n " + saldo);
+        System.out.printf("Saldo atual: %.2f\n " + saldo);
         }
 
     public void depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
-            historico.add("Depósito de " + valor);
-            System.out.println("Depósito de %.2f realizado. \n" + valor);
+
+            Transacao transacao = new Transacao("Depósito", valor);
+            historico.add(transacao);
+
+            System.out.printf("Depósito de %.2f realizado. \n", valor);
         } else {
             System.out.println("Valor inválido.");
         }
@@ -56,8 +59,9 @@ public class Conta {
             System.out.println("Valor inválido.");
         } else if (saldo >= valor) {
             saldo -= valor;
-            historico.add("Saque de " + valor);
-            System.out.println("Saque de %.2f realizado. \n" + valor);
+            Transacao transacao = new Transacao("Saque", valor);
+            historico.add(transacao);
+            System.out.printf("Saque de %.2f realizado. \n", valor);
         } else {
             System.out.println("Saldo insuficiente.");
         }
@@ -69,8 +73,8 @@ public class Conta {
         if (historico.isEmpty()) {
             System.out.println("Nenhuma movimentação.");
         } else {
-            for (String item : historico) {
-                System.out.println(item);
+            for (Transacao item : historico) {
+                System.out.printf("%s de %2.2f em %s\n", item.getTipo(), item.getValor(), item.getData());
             }
         }
     }
