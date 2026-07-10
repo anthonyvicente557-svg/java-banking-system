@@ -1,108 +1,74 @@
-# 💰 Java Banking System
+# 🏦 Java Banking System
 
-Sistema bancário simples desenvolvido em Java com foco em Programação Orientada a Objetos (POO).
+Projeto desenvolvido em Java com o objetivo de praticar Programação Orientada a Objetos (POO) através da criação de um sistema bancário em evolução.
 
 ## 🚀 Funcionalidades
 
-- ✅ Ver saldo
-- ✅ Depositar dinheiro
-- ✅ Sacar dinheiro
-- ✅ Ver histórico de transações
-- ✅ Mostrar dados da conta
-- ✅ Alterar titular da conta
-- ✅ Getters e Setters
-- ✅ Validação de valores
-- ✅ Suporte a valores decimais
-- ✅ Validação de até 2 casas decimais
-- ✅ Tratamento de erros com try/catch
-- ✅ Menu interativo no console
-
-## 👤 Dados da Conta
-
-Cada conta possui:
-
-- Titular
-- Saldo
+- Cadastro de clientes
+- Criação de contas bancárias
+- Numeração automática de contas utilizando `static`
+- Depósitos
+- Saques
 - Histórico de transações
+- Registro automático de data e hora das movimentações
+- Associação entre Cliente e Conta
+- Gerenciamento de múltiplas contas utilizando `ArrayList`
 
-O titular pode ser alterado durante a execução do programa.
+## 📚 Conceitos aplicados
 
-## 🛠️ Tecnologias Utilizadas
+- Programação Orientada a Objetos (POO)
+- Classes e Objetos
+- Encapsulamento
+- Composição entre classes
+- Métodos
+- Construtores
+- ArrayList
+- Laço `for-each`
+- Atributos `static`
+- Manipulação de datas com `LocalDateTime`
+- Validações de entrada
+
+## 🛠️ Tecnologias
 
 - Java
 - IntelliJ IDEA
 - Git
 - GitHub
-- ArrayList
-- double
-- Regex
-- Programação Orientada a Objetos (POO)
 
-## 📚 Conceitos Aplicados
+## 📈 Evolução do projeto
 
-- Classes e Objetos
-- Atributos e Métodos
-- Construtores
-- Encapsulamento
-- Getters e Setters
-- this
-- ArrayList
-- Tratamento de Exceções
-- Validação de entrada
-- Validação com Regex
-- Números decimais com double
-- Programação Orientada a Objetos (POO)
-- Versionamento com Git e GitHub
+### Versão 1
+- Conta bancária simples
+- Depósito
+- Saque
+- Consulta de saldo
 
-## 📂 Estrutura do Projeto
+### Versão 2
+- Histórico de transações
+- Data e hora automáticas
+- Classe `Transacao`
+- Classe `Cliente`
+- Associação entre Cliente e Conta
 
-```text
-src/main/java/org/example/
-├── Main.java
-└── Conta.java
-```
+### Versão 3
+- Numeração automática de contas utilizando `static`
+- Suporte a múltiplas contas utilizando `ArrayList`
+- Exibição de todas as contas cadastradas
 
-## ▶️ Como Executar
+## 🎯 Próximas funcionalidades
 
-1. Clone o repositório:
+- Buscar conta pelo número
+- Selecionar conta para realizar operações
+- Transferência entre contas
+- Cadastro de novas contas pelo menu
+- Persistência de dados em arquivo
+- Integração com banco de dados
+- API utilizando Spring Boot
+- Interface Web
 
-```bash
-git clone https://github.com/anthonyvicente557-svg/java-banking-system.git
-```
+## 📌 Objetivo
 
-2. Abra o projeto no IntelliJ IDEA.
+Este projeto faz parte da minha jornada de aprendizado em Java e será evoluído gradualmente até se tornar um mini sistema bancário, aplicando conceitos utilizados no desenvolvimento de software profissional.
 
-3. Execute a classe `Main.java`.
-
-## 📌 Exemplo do Menu
-
-```text
-=== MENU ===
-1 - Ver saldo
-2 - Depositar
-3 - Sacar
-4 - Ver histórico
-5 - Ver dados da conta
-6 - Alterar titular
-0 - Sair
-```
-
-## 💵 Exemplo de Valores Aceitos
-
-```text
-10
-10,5
-10,50
-```
-
-Valores com mais de duas casas decimais não são aceitos.
-
-## 🎯 Objetivo do Projeto
-
-Este projeto foi desenvolvido para praticar Java, lógica de programação e Programação Orientada a Objetos, servindo também como projeto de portfólio.
-
-## 👨‍💻 Autor
-
-Anthony Vicente
-
-- GitHub: https://github.com/anthonyvicente557-svg
+---
+Desenvolvido por Anthony 🚀
