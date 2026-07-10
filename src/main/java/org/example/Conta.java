@@ -4,13 +4,17 @@ import java.util.ArrayList;
 
 public class Conta {
 
-    private String titular;
+    private Cliente cliente;
     private ArrayList<Transacao> historico = new ArrayList<>();
     private double saldo;
+    private static int proximoNumeroConta = 1001;
+    private int numeroConta;
 
-    public Conta(String titular, double saldoInicial) {
-        this.titular = titular;
+    public Conta(Cliente cliente, double saldoInicial) {
+        this.cliente = cliente;
         this.saldo = saldoInicial;
+        this.numeroConta = proximoNumeroConta;
+        proximoNumeroConta++;
     }
 
     public double getSaldo() {
@@ -18,27 +22,18 @@ public class Conta {
     }
 
     public String getTitular() {
-        return titular;
+        return cliente.getNome();
     }
 
-    public boolean setTitular(String titular) {
-        titular = titular.trim();
-
-        if (titular.isEmpty()) {
-            return false;
-        }
-
-        this.titular = titular;
-            return true;
-        }
-
     public void mostrarDadosConta() {
-        System.out.println("Titular: " + titular);
+        System.out.println("Conta: " + numeroConta);
+        System.out.println("Titular: " + cliente.getNome());
+        System.out.println("CPF: " + cliente.getCpf());
         System.out.println("Saldo atual: " + saldo);
     }
 
     public void mostrarSaldo() {
-        System.out.printf("Saldo atual: %.2f\n " + saldo);
+        System.out.printf("Saldo atual: %.2f\n ", saldo);
         }
 
     public void depositar(double valor) {

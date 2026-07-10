@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -9,18 +10,30 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
 
         // Cria a conta com titular e saldo inicial
-        Conta conta = new Conta("Anthony", 100);
+        Cliente cliente = new Cliente("Anthony", "123.456.789-00");
+        Conta conta = new Conta(cliente,100);
+
+        Cliente cliente2 = new Cliente ("Argemiro", "987.54.321-00");
+        Conta conta2 = new Conta(cliente2, 250);
+        ArrayList<Conta> contas = new ArrayList<>();
+
+        contas.add(conta);
+        contas.add(conta2);
 
         double opcao;
 
         do {
+            System.out.println("=== CONTAS CADASTRADAS ===");
+            for (Conta contaAtual : contas) {
+                contaAtual.mostrarDadosConta();
+                System.out.println();
+            }
             System.out.println("\n=== MENU ===");
             System.out.println("1 - Ver saldo");
             System.out.println("2 - Depositar");
             System.out.println("3 - Sacar");
             System.out.println("4 - Ver histórico");
             System.out.println("5 - Ver dados da conta");
-            System.out.println("6 - Alterar titular");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -55,18 +68,6 @@ public class Main {
 
             else if (opcao == 5) {
                 conta.mostrarDadosConta();
-            }
-
-            else if (opcao == 6) {
-                teclado.nextLine();
-                System.out.println("Digite o novo titular: ");
-                String novoTitular = teclado.nextLine();
-
-                if (conta.setTitular(novoTitular)) {
-                    System.out.println("Titular alterado com sucesso!");
-                } else {
-                    System.out.println("Nome inválido.");
-                }
             }
 
             else if (opcao == 0) {
